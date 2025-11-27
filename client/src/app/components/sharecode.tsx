@@ -44,6 +44,7 @@ export default function Sharecode() {
 
   function handleChange(newValue: string) {
     setServerStatus(null);
+    if (newValue.length > 20000) setServerStatus(500);
     setData({ message: newValue });
 
     // Wyczyść poprzedni timeout
